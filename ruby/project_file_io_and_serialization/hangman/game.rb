@@ -191,7 +191,6 @@ class Game
     ========="]
 
     clear_display
-    puts "secret_word: #{@secret_word}"
     if @attempts == 0
       puts hangman_array[-1]
     else
@@ -219,7 +218,7 @@ class Game
   end
 
   def choose_word
-    File.readlines('5desk.txt').select { |word| word.length.between?(4,5)}.shuffle.sample.downcase.strip
+    File.readlines('5desk.txt').select { |word| word.length.between?(5, 12)}.shuffle.sample.downcase.strip
   end
 
   def valid_guess_input?
